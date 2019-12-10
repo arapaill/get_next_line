@@ -6,11 +6,12 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:39:29 by arapaill          #+#    #+#             */
-/*   Updated: 2019/11/13 16:24:50 by arapaill         ###   ########.fr       */
+/*   Updated: 2019/12/10 12:06:43 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -23,10 +24,10 @@ char	*ft_strdup(const char *s)
 	if (!(str = malloc((sizeof(char) * (ft_strlen(s)+ 1)))))
 		return (0);
 	while(s[i] != '\0')
-		{
-			str[i] = s[i];
-			i++;
-		}
+	{
+		str[i] = s[i];
+		i++;
+	}
 	str[i] = '\0';
 	return (str);
 }
@@ -42,6 +43,7 @@ int		ft_strchr(const char *s, int c)
 			return (i);
 		i++;
 	}
+	
 	if (s[i] == c)
 		return (i);
 	return (0);
@@ -88,6 +90,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	len1;
 	size_t	len2;
 
+	//printf("s1 : %s\ns2 : %s\n", s1, s2);
 	if (s2 == NULL)
 		return (NULL);
 	if (s1 == NULL)
